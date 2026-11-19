@@ -10,6 +10,7 @@
   --color-text-soft: #b3b3b3;
   --color-accent: #2deff2;
   --color-on-accent: #000000;
+  --color-error: #ff5c5c;
 
   /* Tipografía */
   --font-family: 'Inter', Arial, sans-serif;

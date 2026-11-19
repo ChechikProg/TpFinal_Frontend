@@ -1,0 +1,18 @@
+.alerta {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.alerta--error {
+  background: rgba(255, 92, 92, 0.1);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.alerta--info {
+  background: rgba(45, 239, 242, 0.08);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
