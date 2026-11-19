@@ -1,0 +1,36 @@
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.campo__label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.campo__input {
+  height: 44px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  border: 1px solid #262626;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.campo__input:focus {
+  border-color: var(--color-accent);
+}
+
+.campo__input--error {
+  border-color: var(--color-error);
+}
+
+.campo__error {
+  font-size: var(--fs-sm);
+  color: var(--color-error);
+}

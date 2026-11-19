@@ -1,3 +1,10 @@
+import { AuthProvider } from './context/AuthContext.jsx'
+import AppRouter from './routes/AppRouter.jsx'
+
 export default function App() {
-  return <h1 className="page-title">JuegosLink</h1>
+  return (
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
+  )
 }

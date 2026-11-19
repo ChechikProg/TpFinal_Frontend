@@ -1,0 +1,10 @@
+.logo {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--color-text);
+}
+
+.logo__accent {
+  color: var(--color-accent);
+}
