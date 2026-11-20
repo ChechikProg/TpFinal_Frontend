@@ -14,3 +14,10 @@ export function obtenerAnio(fechaIso) {
 export function unirConPuntos(lista = [], maximo = 3) {
   return lista.slice(0, maximo).join(' · ')
 }
+
+// Las portadas de RAWG las pedimos a través de nuestro back, así se ven
+// aunque la red bloquee media.rawg.io.
+export function urlDePortada(url) {
+  if (!url || !url.startsWith('https://media.rawg.io/')) return url
+  return `${import.meta.env.VITE_API_URL}/juegos/imagen?url=${encodeURIComponent(url)}`
+}
