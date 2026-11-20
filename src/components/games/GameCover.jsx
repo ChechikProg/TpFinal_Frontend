@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { urlDePortada } from '../../utils/formatters.js'
 import './GameCover.css'
 
 // Portada del juego. Si no hay imagen (o falla), muestra el título como en el Figma.
@@ -10,7 +11,7 @@ export default function GameCover({ titulo, portadaUrl, className = '' }) {
     <div className={`portada ${className}`}>
       {mostrarImagen ? (
         <img
-          src={portadaUrl}
+          src={urlDePortada(portadaUrl)}
           alt={`Portada de ${titulo}`}
           loading="lazy"
           onError={() => setFallo(true)}
