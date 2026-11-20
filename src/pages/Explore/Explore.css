@@ -1,0 +1,71 @@
+.explorar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.explorar__buscador {
+  height: 64px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.explorar__buscador:focus-within {
+  border-color: var(--color-accent);
+}
+
+.explorar__buscador input {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: var(--color-text);
+}
+
+.explorar__filtros {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.explorar__generos {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-1);
+  scrollbar-width: thin;
+}
+
+.explorar__selects {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.explorar__total {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.explorar__mas {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .explorar__buscador {
+    height: 52px;
+  }
+
+  .explorar__buscador input {
+    font-size: 16px;
+  }
+}
