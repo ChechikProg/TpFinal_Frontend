@@ -1,0 +1,229 @@
+.biblioteca {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.biblioteca__encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.biblioteca__pestanas {
+  display: flex;
+  gap: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.biblioteca__pestana {
+  padding: 14px 0;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.biblioteca__pestana:hover {
+  color: var(--color-text);
+}
+
+.biblioteca__pestana--activa {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+.biblioteca__contador {
+  font-size: var(--fs-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  color: #cccccc;
+}
+
+.biblioteca__filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.biblioteca__filtros .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.biblioteca__cargando {
+  height: 300px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-surface-2) 50%, var(--color-surface) 75%);
+  background-size: 200% 100%;
+  animation: brillo 1.2s ease-in-out infinite;
+}
+
+.estado-vacio a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ---------- Lista (tabla en escritorio) ---------- */
+.biblioteca__lista {
+  list-style: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.biblioteca__fila {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) 1.4fr 1.2fr 0.8fr 56px 40px;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid #1a1a1a;
+  transition: opacity 0.15s;
+}
+
+.biblioteca__fila:last-child {
+  border-bottom: none;
+}
+
+.biblioteca__fila--encabezado {
+  background: #0b0b0b;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.biblioteca__fila--ocupada {
+  opacity: 0.5;
+}
+
+.biblioteca__juego {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.biblioteca__portada {
+  width: 48px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.biblioteca__portada .portada__titulo {
+  font-size: 7px;
+  padding: 4px;
+}
+
+.biblioteca__textos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.biblioteca__titulo {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.biblioteca__juego:hover .biblioteca__titulo {
+  color: var(--color-accent);
+}
+
+.biblioteca__generos {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* La insignia se ve y el select invisible encima permite cambiar el estado */
+.biblioteca__estado {
+  position: relative;
+  justify-self: start;
+}
+
+.biblioteca__estado select {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.biblioteca__estado:focus-within .insignia-estado {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.biblioteca__puntaje {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+}
+
+.biblioteca__puntaje--vacio {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  letter-spacing: 0;
+}
+
+.biblioteca__horas {
+  font-weight: 600;
+}
+
+.biblioteca__icono {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+}
+
+.biblioteca__icono:hover:not(:disabled) {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.biblioteca__quitar:hover:not(:disabled) {
+  color: var(--color-error);
+}
+
+/* ---------- Tarjetas en celular ---------- */
+@media (max-width: 768px) {
+  .biblioteca__fila--encabezado {
+    display: none;
+  }
+
+  .biblioteca__fila {
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas:
+      'juego juego juego'
+      'estado fav quitar'
+      'puntaje horas horas';
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .biblioteca__juego { grid-area: juego; }
+  .biblioteca__estado { grid-area: estado; }
+  .biblioteca__puntaje { grid-area: puntaje; font-size: var(--fs-sm); }
+  .biblioteca__horas { grid-area: horas; justify-self: end; font-size: var(--fs-sm); color: var(--color-text-muted); }
+  .biblioteca__fila > .biblioteca__icono:not(.biblioteca__quitar) { grid-area: fav; }
+  .biblioteca__quitar { grid-area: quitar; }
+}
