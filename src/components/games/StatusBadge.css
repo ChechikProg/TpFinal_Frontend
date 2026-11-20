@@ -1,0 +1,28 @@
+.insignia-estado {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.insignia-estado--jugando {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.insignia-estado--terminado {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.insignia-estado--quiero_jugar {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.insignia-estado--abandonado {
+  background: #262626;
+  color: #aaaaaa;
+}
