@@ -1,0 +1,19 @@
+.estrellas {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.estrellas__boton {
+  padding: 2px;
+  border-radius: 4px;
+  transition: transform 0.1s;
+}
+
+.estrellas__boton:hover:not(:disabled) {
+  transform: scale(1.15);
+}
+
+.estrellas__boton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

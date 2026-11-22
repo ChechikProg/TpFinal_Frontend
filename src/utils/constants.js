@@ -31,3 +31,24 @@ export const ORDENES = [
   { id: '-released', nombre: 'Más nuevos' },
   { id: 'name', nombre: 'Nombre (A-Z)' },
 ]
+
+// Plataformas que se pueden elegir como preferida en el perfil
+export const PLATAFORMAS_PERFIL = ['PC', 'PlayStation', 'Xbox', 'Nintendo', 'iOS', 'Android']
+
+// Géneros para elegir en el perfil (los mismos nombres que muestra la app)
+export const GENEROS_PERFIL = [
+  'Acción',
+  'Aventura',
+  'Rol',
+  'Estrategia',
+  'Disparos',
+  'Plataformas',
+  'Indie',
+  'Simulación',
+  'Deportes',
+  'Carreras',
+  'Puzle',
+  'Lucha',
+  'Casual',
+  'Arcade',
+]

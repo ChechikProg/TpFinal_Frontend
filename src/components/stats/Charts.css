@@ -1,0 +1,157 @@
+.grafico__vacio {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Barras horizontales ---------- */
+.barras {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.barras__fila {
+  display: grid;
+  grid-template-columns: 110px 1fr 44px;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.barras__nombre {
+  font-size: 14px;
+  color: #dddddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barras__pista {
+  height: 8px;
+  border-radius: 4px;
+  background: #222222;
+  overflow: hidden;
+}
+
+.barras__relleno {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--color-text);
+  transition: width 0.4s ease;
+}
+
+.barras__relleno--acento {
+  background: var(--color-accent);
+}
+
+.barras__valor {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+/* ---------- Columnas ---------- */
+.columnas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.columnas__leyenda {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.columnas__leyenda i,
+.apilada__leyenda i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+.columnas__area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.columnas__grupo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.columnas__barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.columnas__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.columnas__numero {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.columnas__barra {
+  width: 28px;
+  min-height: 2px;
+  border-radius: 6px 6px 0 0;
+  transition: height 0.4s ease;
+}
+
+.columnas__etiqueta {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Barra apilada ---------- */
+.apilada {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.apilada__barra {
+  height: 24px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  display: flex;
+  background: #222222;
+}
+
+.apilada__vacia {
+  flex: 1;
+}
+
+.apilada__leyenda {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 480px) {
+  .barras__fila {
+    grid-template-columns: 90px 1fr 36px;
+  }
+
+  .columnas__barra {
+    width: 16px;
+  }
+}

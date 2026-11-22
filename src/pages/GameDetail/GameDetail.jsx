@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import GameCover from '../../components/games/GameCover.jsx'
 import StatusSelector from '../../components/games/StatusSelector.jsx'
+import GameReviews from '../../components/games/GameReviews.jsx'
+import GameCollections from '../../components/games/GameCollections.jsx'
 import Button from '../../components/ui/Button.jsx'
 import Alert from '../../components/ui/Alert.jsx'
 import HeartIcon from '../../components/ui/HeartIcon.jsx'
@@ -249,6 +251,9 @@ export default function GameDetail() {
               </p>
             )}
           </div>
+
+          <GameCollections idExterno={idExterno} />
+          <GameReviews idExterno={idExterno} titulo={juego.titulo} />
         </section>
       </div>
     </div>

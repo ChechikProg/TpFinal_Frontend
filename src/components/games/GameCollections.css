@@ -1,0 +1,47 @@
+.colecciones-juego {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.colecciones-juego__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid #262626;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.colecciones-juego__item:hover {
+  border-color: var(--color-border-strong);
+}
+
+.colecciones-juego__item--ocupada {
+  opacity: 0.5;
+}
+
+.colecciones-juego__item input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.colecciones-juego__nombre {
+  flex: 1;
+  font-weight: 600;
+}
+
+.colecciones-juego__cantidad {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.detalle__aviso a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
