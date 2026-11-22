@@ -1,0 +1,130 @@
+.perfil {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.perfil__cabecera {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: #0b0b0b;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.perfil__datos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.perfil__usuario {
+  color: var(--color-text-soft);
+}
+
+.perfil__bio {
+  color: var(--color-text-soft);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.perfil__preferencias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.perfil__pref {
+  font-size: var(--fs-sm);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-strong);
+}
+
+.perfil__pref--acento {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.perfil__columnas {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.perfil__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.perfil__textarea {
+  height: auto;
+  padding: var(--space-3) var(--space-4);
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.perfil__contador {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  align-self: flex-end;
+}
+
+.perfil__generos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.perfil__derecha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.perfil__favoritos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+}
+
+.perfil__favoritos .portada__titulo {
+  font-size: var(--fs-sm);
+}
+
+.perfil__vacio {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 1000px) {
+  .perfil__columnas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .perfil__cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-5);
+    gap: var(--space-4);
+  }
+
+  .perfil__cabecera .avatar {
+    width: 88px !important;
+    height: 88px !important;
+  }
+
+  .perfil__favoritos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
